@@ -10,7 +10,7 @@ def index():
     ipUsuario = request.remote_addr
     response = make_response(redirect('/informacion'))
     response.set_cookie('ipUsuario',ipUsuario)
-    return render_template("base.html")
+    return response
 
 @app.route('/informacion')
 def informacion():
