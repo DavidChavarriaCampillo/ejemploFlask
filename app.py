@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 items = ["tenis","zapatillas","sandalias"]
 
+@app.errorhandler(404)
+def pageNotFound(e):
+    return render_template("404.html", e=e), 404
+
 @app.route('/index')
 def index():  
     ipUsuario = request.remote_addr
